@@ -1,10 +1,16 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GenerateLevelAndShopList : MonoBehaviour
 {
+    /*
+     * @author Nathan Thomas-Benke
+     */
+
 
     public GameObject item1;
     public GameObject item2;
@@ -14,7 +20,7 @@ public class GenerateLevelAndShopList : MonoBehaviour
     public GameObject item6;
     public GameObject item7;
 
-    public GameObject shoppingSlotContainer;
+    public GameObject shoppingSlotPrefab;
 
     private List<int> selectableItems = new List<int> { 1, 2, 3, 4, 5, 6, 7 };
     private int totalNumofItems = 7;
@@ -42,7 +48,7 @@ public class GenerateLevelAndShopList : MonoBehaviour
                 break;
         }
         //printList();
-        generateItems();
+        SelectShoppingItems();
     }
 
     // Update is called once per frame
@@ -51,7 +57,7 @@ public class GenerateLevelAndShopList : MonoBehaviour
         
     }
 
-    private void generateItems()
+    private void SelectShoppingItems()
     {
         //List<int> availableValues = new List<int>();
 
@@ -85,6 +91,7 @@ public class GenerateLevelAndShopList : MonoBehaviour
         {
             //Create UI Item
             Debug.Log(selectableItems[totalNumofItems - 1 - i]);
+            createUIShoppingItem(selectableItems[totalNumofItems - 1 - i]);
 
                         
         }
@@ -93,8 +100,17 @@ public class GenerateLevelAndShopList : MonoBehaviour
 
     private int getLevelNumber()
     {
+        // [TODO: If multiple levels are created, make identifier.]
         return 1;
     }
+
+    private void createUIShoppingItem(int itemIdentifier)
+    {
+        GameObject UIObject = Instantiate(shoppingSlotPrefab, this.transform);
+        TextMeshProUGUI shopItemName = UIObject.GetComponentInChildren<TextMeshProUGUI>();
+        shopItemName.text = getItemName(itemIdentifier); //[TODO: Placeholder
+    }
+
 
     private void printList()
     {
@@ -110,5 +126,29 @@ public class GenerateLevelAndShopList : MonoBehaviour
             Debug.Log(selectableItems.IndexOf(i));
         }*/
     }
+
+    private string getItemName(int index)
+    {
+        switch(index)
+        {
+            case 1:
+                return "Drone";
+            case 2:
+                return "Television";
+            case 3:
+                return "Headphones";
+            case 4:
+                return "Cologne";
+            case 5:
+                return "Laptop";
+            case 6:
+                return "Air Fryer";
+            case 7:
+                return "Purse";
+            default:
+                return "Missing item declaration for " + index;
+        }
+    }
+
 
 }
