@@ -29,11 +29,11 @@ public class Grab : MonoBehaviour
             {
                 // Play animation
                 //animator.SetBool()
-               // animator.SetBool("isLeftHandUp", true);
+                animator.SetBool("isLeftHandUp", true);
             }
             else if (isLeftorRight == 1)
             {
-                //animator.SetBool("isRightHandUp", true);
+                animator.SetBool("isRightHandUp", true);
                 //animator.SetBool("isRightHandUp", true);
             }
 
@@ -53,13 +53,12 @@ public class Grab : MonoBehaviour
             {
                 // Play animation
                 //animator.SetBool()
-               //  animator.SetBool("isLeftHandUp", false);
+                 animator.SetBool("isLeftHandUp", false);
 
             }
             else if (isLeftorRight == 1)
             {
-                //animator.SetBool("isRightHandUp, false);
-               // animator.SetBool("isRightHandUp", false);
+               animator.SetBool("isRightHandUp", false);
 
             }
 
