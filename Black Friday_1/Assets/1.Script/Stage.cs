@@ -9,7 +9,7 @@ public class Stage : MonoBehaviour
     //Obtain randomly among the items here 
     public List<string> itemNames = new List<string>();
 
-    public int count = 10;
+    public int count = 3; // how many items the player have to pick and bring
 
     private void Awake()
     {

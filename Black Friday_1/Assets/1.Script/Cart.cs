@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class Cart : MonoBehaviour
 {
-    public Transform itemPlace; //플레이가 획득 아이템들이 놓이는 장소
+    public Transform itemPlace; 
 
 
-    public List<Item> addedItems = new List<Item>();//카트에 추가된 아이템
+    public List<Item> addedItems = new List<Item>();//items which add in the cart
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
@@ -17,7 +17,7 @@ public class Cart : MonoBehaviour
             {
                 Debug.Log(addedItems[i].itemName);
             }
-            //리스트 일괄 담기
+            //add all lists
             addedItems.AddRange(player.takenItems);
             for (int i = 0; i < player.takenItems.Count; i++)
             {
@@ -33,9 +33,8 @@ public class Cart : MonoBehaviour
 
     public void CheckClear()
     {
-        //addedItems와 어떤 값과 비교해야될까요?
 
-        //플레이어의 구매 목록 가져오기
+        //Bring the Player's purchaseList
         List<PurchaseElement> purchaseList = Player.Instance.purchaseList;
 
         PurchaseListPanel purchaseListPanel = FindObjectOfType<PurchaseListPanel>();
@@ -47,7 +46,7 @@ public class Cart : MonoBehaviour
 
             int addedCount = GetAddedItemCount(purchaseList[i].itemName);
             itemCount.Add(purchaseList[i].itemName, addedCount);
-            if (addedCount < purchaseList[i].count)//만족하지 못한 개수가 있음
+            if (addedCount < purchaseList[i].count)
             {
                 clear = false;
             }

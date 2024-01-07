@@ -13,7 +13,7 @@ public class PurchaseElementPanel : MonoBehaviour
     {
         element = e;
 
-        //아이템 이름을 출력합니다.
+        //item name pop up
         itemNameText.text = e.itemName;
         countText.text = e.count.ToString();
     }
