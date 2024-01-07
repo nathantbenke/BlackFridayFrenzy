@@ -7981,13 +7981,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2772960942616627297}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -1.52, y: 1.048477, z: -0.684}
   m_LocalScale: {x: 1.589033, y: 1, z: 1.1111112}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4175013342988891013}
-  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &1364372266969984513
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -18449,7 +18449,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 0}
-  rb: {fileID: 8867652027027140619}
+  rb: {fileID: 0}
   isLeftorRight: 0
   grabAttempt: 0
   isGrabbing: 0
@@ -19424,13 +19424,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4942554186491990813}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.183, y: 1.048477, z: -0.684}
   m_LocalScale: {x: 1.589033, y: 1, z: 1.1111112}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4175013342988891013}
-  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &4779601183497964997
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -20034,13 +20034,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8048930317346548459}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.398, y: 0.166, z: -0.684}
   m_LocalScale: {x: 1.589033, y: 1, z: 1.1111112}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4175013342988891013}
-  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4912625649053538097
 GameObject:
   m_ObjectHideFlags: 0
@@ -23769,7 +23769,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 0}
-  rb: {fileID: 5488159120893238295}
+  rb: {fileID: 0}
   isLeftorRight: 0
   grabAttempt: 0
   isGrabbing: 0
