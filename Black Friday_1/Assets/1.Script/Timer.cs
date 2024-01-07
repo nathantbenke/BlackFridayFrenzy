@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Timer : MonoBehaviour
 {
@@ -17,6 +18,12 @@ public class Timer : MonoBehaviour
         {
             timeSeconds -= Time.deltaTime;
             timer.text = convertTime();
+
+            //When the time become 0, then "GameOver"
+            if(timeSeconds <= 0 )
+            {
+                SceneManager.LoadScene("GameOver");
+            }
         }
     }
 

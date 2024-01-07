@@ -382,6 +382,7 @@
 "Assets/1.Script/Item.cs"
 "Assets/1.Script/ItemPlace.cs"
 "Assets/1.Script/Market.cs"
+"Assets/1.Script/PlayButton.cs"
 "Assets/1.Script/Player.cs"
 "Assets/1.Script/PlayerController/CameraControl.cs"
 "Assets/1.Script/PlayerController/LimColllision.cs"
