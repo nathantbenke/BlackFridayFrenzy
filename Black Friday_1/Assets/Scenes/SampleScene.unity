@@ -11107,7 +11107,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3437825308996608180}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: af5d5458830dc9543923291a12b2efe6, type: 3}
   m_Name: 
@@ -11117,7 +11117,6 @@ MonoBehaviour:
   playing: 0
   playTime: 0
   playTimer: 0
-  firstSet: 1
 --- !u!1 &2214435922809157337
 GameObject:
   m_ObjectHideFlags: 0
@@ -14419,18 +14418,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a70150bfe5090194bbe3a9cb55ef9870, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shoppingList: {fileID: 0}
+  shoppingList: {fileID: 1826282585}
   purchaseList: []
   itemNames:
+  - NULL
   - Drone
-  - ComputerMonitor
+  - Television Set
+  - Headphones
+  - Cologne
+  - Blender
+  - Handbag
+  - Computer Monitor
+  - Game System
   - Coke
   - Pepsi
-  - TelevisionSet
-  - Handbag
-  - Blender
-  - Headphones
-  - PerfumeV3
   purchaseListUI: 
   count: 10
 --- !u!33 &3209443832817628782
@@ -15080,7 +15081,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!135 &3453618165373663693
 SphereCollider:
   m_ObjectHideFlags: 0

@@ -22,17 +22,20 @@ public class GenerateLevelAndShopList : MonoBehaviour
 
     public GameObject shoppingSlotPrefab;
 
-    private List<int> selectableItems = new List<int> { 1, 2, 3, 4, 5, 6, 7 };
+    private List<int> selectableItems = new List<int> { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
     private int totalNumofItems = 7;
 
     private int levelNum;
-    private int numOfItems;
+    public int numOfItems;
     private int itemsToSelect;
+
+    public List<int> purchaseListUI = new List<int>();
+
     // Start is called before the first frame update
     void Start()
     {
         levelNum = getLevelNumber();
-        switch(levelNum)
+        switch (levelNum)
         {
             case 1: //Level 1
                 numOfItems = 3;
@@ -54,7 +57,7 @@ public class GenerateLevelAndShopList : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     private void SelectShoppingItems()
@@ -90,10 +93,10 @@ public class GenerateLevelAndShopList : MonoBehaviour
         for (int i = 0; i < numOfItems; i++)
         {
             //Create UI Item
-            Debug.Log(selectableItems[totalNumofItems - 1 - i]);
+            //Debug.Log(selectableItems[totalNumofItems - 1 - i]);
             createUIShoppingItem(selectableItems[totalNumofItems - 1 - i]);
+            purchaseListUI.Add(selectableItems[totalNumofItems - 1 - i]);
 
-                        
         }
     }
 
@@ -116,7 +119,7 @@ public class GenerateLevelAndShopList : MonoBehaviour
     {
         Debug.Log("New List");
         String list = "";
-        foreach(int number in selectableItems)
+        foreach (int number in selectableItems)
         {
             list += number + ", ";
         }
@@ -129,26 +132,36 @@ public class GenerateLevelAndShopList : MonoBehaviour
 
     private string getItemName(int index)
     {
-        switch(index)
+        switch (index)
         {
             case 1:
                 return "Drone";
             case 2:
-                return "Television";
+                return "Television Set";
             case 3:
                 return "Headphones";
             case 4:
                 return "Cologne";
             case 5:
-                return "Laptop";
+                return "Blender";
             case 6:
-                return "Air Fryer";
+                return "Handbag";
             case 7:
-                return "Purse";
+                return "Computer Monitor";
+            case 8:
+                return "Game System";
+            case 9:
+                return "Coke";
+            case 10:
+                return "Pepsi";
             default:
                 return "Missing item declaration for " + index;
         }
     }
 
+    public List<int> getPurchaseListUI()
+    {
+        return purchaseListUI;
+    }
 
 }

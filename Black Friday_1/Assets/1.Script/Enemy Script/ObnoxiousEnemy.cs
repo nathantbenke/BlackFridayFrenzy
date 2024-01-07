@@ -4,15 +4,19 @@ using UnityEngine;
 
 public class ObnoxiousEnemy : Enemy
 {
-    public ObnoxiousEnemyBehaviour behaviour; 
+    public ObnoxiousEnemyBehaviour behaviour;
 
-    public Stall destinationStall; 
-    public float arriveDistance; 
+    public Stall destinationStall;
+    public float arriveDistance;
 
     int pickingCount;
+    public int curStageIdx = 0;
+
+    public List<PurchaseElement> purchaseList;
     private void Start()
     {
         pickingCount = Random.Range(3, 6);
+        purchaseList = GameManager.Instance.stages[curStageIdx].purchaseList;
 
         //How many stalls will this enemy stop at
         destinationStall = GetRandomStall();
@@ -91,11 +95,11 @@ public class ObnoxiousEnemy : Enemy
     Stall GetRandomStall()
     {
 
-        int randonIdx = Random.Range(0, Player.Instance.purchaseList.Count);
-        PurchaseElement e = Player.Instance.purchaseList[randonIdx];
+        int randonIdx = Random.Range(0, purchaseList.Count);
+        PurchaseElement e = purchaseList[randonIdx];
 
         List<Stall> stalls = Market.Instance.GetStalls(e.itemName);
-        randonIdx = Random.Range(0, stalls.Count);
+        randonIdx = Random.Range(0, 2);
 
         return stalls[randonIdx];
     }
@@ -104,7 +108,7 @@ public class ObnoxiousEnemy : Enemy
 
 public enum ObnoxiousEnemyBehaviour
 {
-    walking, 
-    picking, 
-    exiting 
+    walking,
+    picking,
+    exiting
 }

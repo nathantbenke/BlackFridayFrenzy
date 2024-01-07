@@ -39,8 +39,8 @@ public class GameManager : MonoBehaviour
 
         }
 
-        Player.Instance.purchaseList = stages[curStageIdx].purchaseList;
-        FindObjectOfType<PurchaseListPanel>().SetPurchaseList(stages[curStageIdx].purchaseList);
+        //Player.Instance.purchaseList = stages[curStageIdx].purchaseList;
+        //FindObjectOfType<PurchaseListPanel>().SetPurchaseList(stages[curStageIdx].purchaseList);
     }
     private void Update()
     {
