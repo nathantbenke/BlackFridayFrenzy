@@ -11,6 +11,8 @@ public class Player : MonoBehaviour
     [SerializeField] float moveSpeed; // player move speed
     [SerializeField] float rotationSpeed; //player rotation speed
 
+    public Animator animator;
+
 
     public List<string> needItemNames = new List<string>();
 
@@ -29,22 +31,36 @@ public class Player : MonoBehaviour
 
         rb = GetComponent<Rigidbody>();
 
+
     }
 
+    float onceAnimPlayingTimer;
     private void Update()
     {
+        if (onceAnimPlayingTimer >0)
+            onceAnimPlayingTimer -= Time.deltaTime;
+
         if (Input.GetKey(KeyCode.W))
         {
             rb.velocity = transform.forward.normalized * moveSpeed;
-
+            animator.SetInteger("WalkState", 1);
+            if(onceAnimPlayingTimer <=0)
+            animator.Play("Walk");
         }
         else if (Input.GetKey(KeyCode.S))
         {
             rb.velocity = -transform.forward.normalized * moveSpeed;
+            animator.SetInteger("WalkState", 1);
+            if (onceAnimPlayingTimer <= 0)
+                animator.Play("Walk");
         }
         else
         {
             rb.velocity = Vector3.zero;
+
+            animator.SetInteger("WalkState", 0);
+            if (onceAnimPlayingTimer <= 0)
+                animator.Play("idle");
         }
 
 
@@ -55,6 +71,22 @@ public class Player : MonoBehaviour
         else if (Input.GetKey(KeyCode.D))
         {
             transform.Rotate(Vector3.up, rotationSpeed * Time.deltaTime);
+        }
+        
+        if (Input.GetMouseButtonDown(0))
+        {
+            animator.Play("PunchLeft", -1,0);
+            onceAnimPlayingTimer = 1;
+        }
+        if (Input.GetMouseButtonDown(1))
+        {
+            animator.Play("PunchRight",-1,0);
+            onceAnimPlayingTimer = 1;
+        }
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            animator.Play("PickUp", -1, 0);
+            onceAnimPlayingTimer = 1;
         }
     }
 
