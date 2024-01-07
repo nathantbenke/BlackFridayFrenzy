@@ -11,21 +11,25 @@ public class GameManager : MonoBehaviour
     public bool playing; //status
     public float playTime; //playtime
     public float playTimer; //time passed
+
+    public bool firstSet = true;
+
     private void Awake()
     {
-        Instance = this;
-        stages = GetComponentsInChildren<Stage>();
+        //Instance = this;
+        //stages = GetComponentsInChildren<Stage>();
     }
 
     private void Start()
     {
+        Instance = this;
+        stages = GetComponentsInChildren<Stage>();
         StartGame();
     }
 
     public void StartGame()
     {
         playing = true;
-        playTimer = 0;
         for (int i = 0; i < stages.Length; i++)
         {
             if (i == curStageIdx)
@@ -39,11 +43,12 @@ public class GameManager : MonoBehaviour
 
         }
 
-        Player.Instance.purchaseList = stages[curStageIdx].purchaseList;
-        FindObjectOfType<PurchaseListPanel>().SetPurchaseList(stages[curStageIdx].purchaseList);
+       // Player.Instance.purchaseList = stages[curStageIdx].purchaseList;
+        //FindObjectOfType<PurchaseListPanel>().SetPurchaseList(stages[curStageIdx].purchaseList);
     }
     private void Update()
     {
+
         if (!playing)
             return;
 

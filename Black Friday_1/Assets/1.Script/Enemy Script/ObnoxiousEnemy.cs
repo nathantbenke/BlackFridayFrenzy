@@ -10,9 +10,13 @@ public class ObnoxiousEnemy : Enemy
     public float arriveDistance; 
 
     int pickingCount;
+    public int curStageIdx = 0;
+
+    public List<PurchaseElement> purchaseList;
     private void Start()
     {
         pickingCount = Random.Range(3, 6);
+        purchaseList = GameManager.Instance.stages[curStageIdx].purchaseList;
 
         //How many stalls will this enemy stop at
         destinationStall = GetRandomStall();
@@ -91,8 +95,8 @@ public class ObnoxiousEnemy : Enemy
     Stall GetRandomStall()
     {
 
-        int randonIdx = Random.Range(0, Player.Instance.purchaseList.Count);
-        PurchaseElement e = Player.Instance.purchaseList[randonIdx];
+        int randonIdx = Random.Range(0, purchaseList.Count);
+        PurchaseElement e = purchaseList[randonIdx];
 
         List<Stall> stalls = Market.Instance.GetStalls(e.itemName);
         randonIdx = Random.Range(0, stalls.Count);

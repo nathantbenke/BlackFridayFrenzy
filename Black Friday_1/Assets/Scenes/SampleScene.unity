@@ -1702,7 +1702,7 @@ GameObject:
   - component: {fileID: 963194226}
   m_Layer: 0
   m_Name: Main Camera
-  m_TagString: MainCamera
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2189,6 +2189,8 @@ MonoBehaviour:
   item6: {fileID: 0}
   item7: {fileID: 0}
   shoppingSlotPrefab: {fileID: 914889444}
+  numOfItems: 0
+  purchaseListUI: 
 --- !u!114 &1961298265
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2241,7 +2243,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
   m_AnchoredPosition: {x: 0, y: -400}
-  m_SizeDelta: {x: 600, y: 800}
+  m_SizeDelta: {x: 700, y: 800}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1964977228
 MonoBehaviour:
@@ -4787,14 +4789,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2889941896042376914}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.377719, y: 4.2, z: -4.934142}
+  m_LocalRotation: {x: -0, y: 0.66583776, z: -0, w: 0.74609655}
+  m_LocalPosition: {x: -7.38, y: 4.2, z: -6.65}
   m_LocalScale: {x: 50, y: 50, z: 50}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 3101603762790708770}
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 83.493, z: 0}
 --- !u!1 &587917529427832963
 GameObject:
   m_ObjectHideFlags: 0
@@ -7874,8 +7876,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a70150bfe5090194bbe3a9cb55ef9870, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  shoppingList: {fileID: 0}
   purchaseList: []
   itemNames: []
+  purchaseListUI: 
   count: 10
 --- !u!23 &1398532208416535195
 MeshRenderer:
@@ -8334,6 +8338,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4279438379803865293}
+  - {fileID: 5686706226470732846}
   m_Father: {fileID: 3101603762790708770}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &1535827303364593351
@@ -10886,11 +10891,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af5d5458830dc9543923291a12b2efe6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stages: []
+  stages:
+  - {fileID: 3208335327415027994}
   curStageIdx: 0
   playing: 0
   playTime: 0
   playTimer: 0
+  firstSet: 1
 --- !u!1 &2214435922809157337
 GameObject:
   m_ObjectHideFlags: 0
@@ -13776,7 +13783,6 @@ Transform:
   - {fileID: 4259471801259648014}
   - {fileID: 1737777703142760648}
   - {fileID: 1529597725615400897}
-  - {fileID: 5686706226470732846}
   m_Father: {fileID: 578135529758977384}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &3104119193345640916
@@ -14192,17 +14198,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a70150bfe5090194bbe3a9cb55ef9870, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  shoppingList: {fileID: 1826282585}
   purchaseList: []
   itemNames:
+  - NULL
   - Drone
-  - ComputerMonitor
+  - Television Set
+  - Headphones
+  - Cologne
+  - Blender
+  - Handbag
+  - Computer Monitor
+  - Game System
   - Coke
   - Pepsi
-  - TelevisionSet
-  - Handbag
-  - Blender
-  - Headphones
-  - PerfumeV3
+  purchaseListUI: 
   count: 10
 --- !u!33 &3209443832817628782
 MeshFilter:
@@ -14851,7 +14861,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!135 &3453618165373663693
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -22935,13 +22945,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3809457595186994817}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.0059, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.00034670028, y: -0.020121902, z: -0.0015733363}
+  m_LocalScale: {x: 2.6669157, y: 3.2323658, z: 2.5792553}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5211501359869300112}
-  m_Father: {fileID: 3101603762790708770}
+  m_Father: {fileID: 1529597725615400897}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5695968535796514562
 GameObject:
@@ -23463,8 +23473,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a70150bfe5090194bbe3a9cb55ef9870, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  shoppingList: {fileID: 0}
   purchaseList: []
   itemNames: []
+  purchaseListUI: 
   count: 10
 --- !u!1 &5899368885834111732
 GameObject:
@@ -32289,7 +32301,7 @@ GameObject:
   - component: {fileID: 8673348659213116834}
   m_Layer: 0
   m_Name: Camera
-  m_TagString: Untagged
+  m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
