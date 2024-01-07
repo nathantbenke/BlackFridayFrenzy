@@ -5,16 +5,16 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 638401580242910178
-    m_Hash: 1686498576
+      ticks: 638402211844360336
+    m_Hash: 3762906876
   m_LockFileStatus:
     m_FilePath: C:/Users/natha/Documents/GitHub/BlackFridayFrenzy/Black Friday_1/Packages/packages-lock.json
     m_PathExists: 1
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 638401580242955288
-    m_Hash: 3258719856
+      ticks: 638402211844370204
+    m_Hash: 2129133215
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}
 m_LocalPackages:
