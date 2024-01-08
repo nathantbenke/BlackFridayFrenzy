@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class CameraControl : MonoBehaviour
 {
+    /*
+     * @author Nathan Thomas-Benke
+     */
 
     public float rotationSpeed = 1;
     public Transform root;

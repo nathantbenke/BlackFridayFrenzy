@@ -11,19 +11,10 @@ public class GenerateLevelAndShopList : MonoBehaviour
      * @author Nathan Thomas-Benke
      */
 
-
-    public GameObject item1;
-    public GameObject item2;
-    public GameObject item3;
-    public GameObject item4;
-    public GameObject item5;
-    public GameObject item6;
-    public GameObject item7;
-
     public GameObject shoppingSlotPrefab;
 
     private List<int> selectableItems = new List<int> { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
-    private int totalNumofItems = 7;
+    private int totalNumofItems = 10;
 
     private int levelNum;
     public int numOfItems;
@@ -93,7 +84,7 @@ public class GenerateLevelAndShopList : MonoBehaviour
         for (int i = 0; i < numOfItems; i++)
         {
             //Create UI Item
-            //Debug.Log(selectableItems[totalNumofItems - 1 - i]);
+            Debug.Log(selectableItems[totalNumofItems - 1 - i]);
             createUIShoppingItem(selectableItems[totalNumofItems - 1 - i]);
             purchaseListUI.Add(selectableItems[totalNumofItems - 1 - i]);
 

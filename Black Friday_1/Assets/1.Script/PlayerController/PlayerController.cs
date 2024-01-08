@@ -51,7 +51,7 @@ public class PlayerController : MonoBehaviour
         {
             if(isGrounded)
             {
-                hips.AddForce(new Vector3(0, 3*jumpForce, 0)); //To dash forward add to Z
+                hips.AddForce(new Vector3(0, 2*jumpForce, 0)); //To dash forward add to Z
                 isGrounded = false;
             }
         }
