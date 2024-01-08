@@ -13,10 +13,14 @@ public class Player : MonoBehaviour
 
     public Animator animator;
 
+    public float pickUpRange;
+    public Transform pickUpPoint;
+    public Item takeItem; 
 
-    public List<string> needItemNames = new List<string>();
 
-    public List<Item> takenItems = new List<Item>();
+    //public List<string> needItemNames = new List<string>();
+
+   // public List<Item> takenItems = new List<Item>();
 
     public List<PurchaseElement> purchaseList = new List<PurchaseElement>();
 
@@ -85,55 +89,101 @@ public class Player : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            animator.Play("PickUp", -1, 0);
-            onceAnimPlayingTimer = 1;
+            PickUp();
+        }
+    }
+    public void PickUp()
+    {
+        if (takeItem != null)
+            return;
+
+        animator.Play("PickUp", -1, 0);
+        onceAnimPlayingTimer = 1;
+        Collider[] cols = Physics.OverlapSphere(pickUpPoint.position, pickUpRange);
+
+        for (int i = 0; i < cols.Length; i++)
+        {
+            if (cols[i].CompareTag("Stall"))
+            {
+                Stall stall = cols[i].GetComponent<Stall>();
+
+                bool found = FindItem(stall);
+
+                if (found)
+                    break;
+
+            }
         }
     }
 
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.CompareTag("Stall"))
-        {
-            Debug.Log("Player OnTriggerEnter Stall");
-            EnterStall(other.GetComponent<Stall>());
-        }
-    }
-    //When the player enter the stall 
-    public void EnterStall(Stall stall)
+    bool FindItem(Stall stall)
     {
         for (int i = 0; i < stall.itemPlaces.Length; i++)
         {
-            for (int j = 0; j < purchaseList.Count; j++)
-            {
-                int curCount = purchaseList[j].count;
-                int takenCount = GetTakenItemCount(purchaseList[j].itemName);
+            if (stall.itemPlaces[i].curItem == null)
+                continue;
 
-                if (curCount <= takenCount)
-                    continue;
-
-                if (stall.itemPlaces[i].curItem == null)
-                    continue;
-
-                if (purchaseList[j].itemName == stall.itemPlaces[i].curItem.itemName)
-                {
-                    Item item = stall.itemPlaces[i].TakeItem();
-                    takenItems.Add(item);
-                }
-            }
+            takeItem = stall.itemPlaces[i].TakeItem();
+            takeItem.transform.position = pickUpPoint.position;
+            takeItem.transform.parent = pickUpPoint;
+            
+            Collider col = takeItem.GetComponentInChildren<Collider>();
+            col.enabled = false;
+            return true;
         }
+        return false;
     }
-    int GetTakenItemCount(string iName)
+
+    private void OnDrawGizmos()
     {
-        int count = 0;
-        for (int i = 0; i < takenItems.Count; i++)
-        {
-            if (takenItems[i].itemName == iName)
-            {
-                count++;
-            }
-        }
-        return count;
+        if (pickUpPoint == null)
+            return;
+        Gizmos.DrawWireSphere(pickUpPoint.position, pickUpRange);
     }
+    //private void OnTriggerEnter(Collider other)
+    //{
+    //    if (other.CompareTag("Stall"))
+    //    {
+    //        Debug.Log("Player OnTriggerEnter Stall");
+    //        EnterStall(other.GetComponent<Stall>());
+    //    }
+    //}
+    ////When the player enter the stall 
+    //public void EnterStall(Stall stall)
+    //{
+    //    for (int i = 0; i < stall.itemPlaces.Length; i++)
+    //    {
+    //        for (int j = 0; j < purchaseList.Count; j++)
+    //        {
+    //            int curCount = purchaseList[j].count;
+    //            int takenCount = GetTakenItemCount(purchaseList[j].itemName);
+
+    //            if (curCount <= takenCount)
+    //                continue;
+
+    //            if (stall.itemPlaces[i].curItem == null)
+    //                continue;
+
+    //            if (purchaseList[j].itemName == stall.itemPlaces[i].curItem.itemName)
+    //            {
+    //                Item item = stall.itemPlaces[i].TakeItem();
+    //                takenItems.Add(item);
+    //            }
+    //        }
+    //    }
+    //}
+    //int GetTakenItemCount(string iName)
+    //{
+    //    int count = 0;
+    //    for (int i = 0; i < takenItems.Count; i++)
+    //    {
+    //        if (takenItems[i].itemName == iName)
+    //        {
+    //            count++;
+    //        }
+    //    }
+    //    return count;
+    //}
 
 }
 

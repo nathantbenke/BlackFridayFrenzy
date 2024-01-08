@@ -13,20 +13,22 @@ public class Cart : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             Player player = other.GetComponent<Player>();
-            for (int i = 0; i < addedItems.Count; i++)
-            {
-                Debug.Log(addedItems[i].itemName);
-            }
-            //add all lists
-            addedItems.AddRange(player.takenItems);
-            for (int i = 0; i < player.takenItems.Count; i++)
-            {
-                player.takenItems[i].transform.position = itemPlace.position;
-                player.takenItems[i].GetComponent<Rigidbody>().isKinematic = false;
-                player.takenItems[i].gameObject.SetActive(true);
-            }
 
-            player.takenItems.Clear();
+            if (player.takeItem == null)
+                return;
+          
+            //리스트 일괄 담기
+            addedItems.Add(player.takeItem);
+
+            player.takeItem.transform.parent = null;
+
+            player.takeItem.transform.position = itemPlace.position;
+            player.takeItem.GetComponent<Rigidbody>().isKinematic = false;
+
+            Collider col = player.takeItem.GetComponentInChildren<Collider>();
+            col.enabled = true;
+
+            player.takeItem = null;
             CheckClear();
         }
     }

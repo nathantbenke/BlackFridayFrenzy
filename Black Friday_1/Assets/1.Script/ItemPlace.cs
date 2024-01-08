@@ -26,7 +26,7 @@ public class ItemPlace : MonoBehaviour
 
         Item item = curItem;
 
-        curItem.gameObject.SetActive(false);
+        //curItem.gameObject.SetActive(false);
         curItem = null;
 
         //Call the SpawnItem() function after 5 seconds

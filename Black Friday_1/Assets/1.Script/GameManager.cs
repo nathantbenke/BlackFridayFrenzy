@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -24,6 +25,8 @@ public class GameManager : MonoBehaviour
 
     public void StartGame()
     {
+        curStageIdx = PlayerPrefs.GetInt("curStageIdx", 0);
+
         playing = true;
         playTimer = 0;
         for (int i = 0; i < stages.Length; i++)
@@ -63,11 +66,19 @@ public class GameManager : MonoBehaviour
 
         playing = false;
 
+        if (result)
+        {
+            curStageIdx++;
+            if (curStageIdx ==3)
+            {
+                // 게임 끝 클리어
+                return;
+            }
+            PlayerPrefs.SetInt("curStageIdx", curStageIdx);
+            
+            SceneManager.LoadScene("SampleScene");
+        }
     }
-    public void Clear()
-    {
-        EndGame(true);
-        curStageIdx++;
-    }
+
 }
 
