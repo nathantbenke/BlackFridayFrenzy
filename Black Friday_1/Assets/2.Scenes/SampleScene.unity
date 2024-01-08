@@ -1657,8 +1657,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7cadc9626e16b3a42aa60aeed6a9f4af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeSeconds: 121
+  timeSeconds: 10
   timer: {fileID: 880492852}
+  LArmAnimationScript: {fileID: 8247220025372237696}
+  LArmHandGrabScript: {fileID: 9155207269986030928}
 --- !u!1 &888932536
 GameObject:
   m_ObjectHideFlags: 0
