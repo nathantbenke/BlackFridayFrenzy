@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Cart : MonoBehaviour
@@ -17,7 +18,7 @@ public class Cart : MonoBehaviour
             if (player.takeItem == null)
                 return;
           
-            //리스트 일괄 담기
+    
             addedItems.Add(player.takeItem);
 
             player.takeItem.transform.parent = null;
@@ -28,6 +29,7 @@ public class Cart : MonoBehaviour
             Collider col = player.takeItem.GetComponentInChildren<Collider>();
             col.enabled = true;
 
+            player.takeItem.SizeUp();
             player.takeItem = null;
             CheckClear();
         }

@@ -48,6 +48,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -6067185528594298527, guid: 246df50e34cd80e4c99319b43c7ea52c, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: aaba84c70050c7b44b24990ad3c7667d, type: 2}
+    - target: {fileID: -4780072770720950627, guid: 246df50e34cd80e4c99319b43c7ea52c, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 12a633c5066075043a9e0a589fc5fde9, type: 2}
+    - target: {fileID: -3316209038747775882, guid: 246df50e34cd80e4c99319b43c7ea52c, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 12a633c5066075043a9e0a589fc5fde9, type: 2}
     - target: {fileID: 919132149155446097, guid: 246df50e34cd80e4c99319b43c7ea52c, type: 3}
       propertyPath: m_Name
       value: ComputerMonitor
@@ -134,5 +146,5 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 0.379332, z: 0.4915694}
-  m_Center: {x: 0, y: 0.21310946, z: 0.2542153}
+  m_Size: {x: 1.2742851, y: 0.379332, z: 0.2852078}
+  m_Center: {x: 0.04702592, y: 0.21310946, z: 0.017646734}

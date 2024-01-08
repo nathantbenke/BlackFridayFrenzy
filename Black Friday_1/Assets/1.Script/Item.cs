@@ -4,10 +4,38 @@ using UnityEngine;
 
 public class Item : MonoBehaviour
 {
-    public string itemName; // item name
+    public string itemName; 
 
-    private void Start()
+    bool sizeUp;
+    float size;
+
+    public void OnEnable()
     {
-        Market.Instance.AddItem(this);
+        SizeUp();
     }
+
+    public void SizeUp()
+    {
+        sizeUp = true;
+        size = 0;
+        transform.localScale = new Vector3(size, size, size);
+    }
+
+    private void Update()
+    {
+        if (!sizeUp)
+            return;
+
+        if (size >= 1)
+        {
+            sizeUp = false;
+            transform.localScale = new Vector3(1, 1, 1);
+            return;
+        }
+
+        size += Time.deltaTime * 5;
+        transform.localScale = new Vector3(size, size, size);
+    }
+
+
 }

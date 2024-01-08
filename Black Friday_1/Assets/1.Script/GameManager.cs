@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
+using System;
 using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
@@ -12,6 +14,8 @@ public class GameManager : MonoBehaviour
     public bool playing; //status
     public float playTime; //playtime
     public float playTimer; //time passed
+
+    public TMP_Text timeText;
     private void Awake()
     {
         Instance = this;
@@ -25,6 +29,8 @@ public class GameManager : MonoBehaviour
 
     public void StartGame()
     {
+        SetTimeText(playTime);
+
         curStageIdx = PlayerPrefs.GetInt("curStageIdx", 0);
 
         playing = true;
@@ -45,11 +51,19 @@ public class GameManager : MonoBehaviour
         Player.Instance.purchaseList = stages[curStageIdx].purchaseList;
         FindObjectOfType<PurchaseListPanel>().SetPurchaseList(stages[curStageIdx].purchaseList);
     }
+    void SetTimeText(float time)
+    {
+        TimeSpan timeSpan = TimeSpan.FromSeconds(time);
+        string playTimeStr = timeSpan.Minutes.ToString("00") + ":" + timeSpan.Seconds.ToString("00");
+
+        timeText.text = playTimeStr;
+    }
     private void Update()
     {
         if (!playing)
             return;
 
+        //  over time
         if (playTimer >= playTime)
         {
             EndGame(false);
@@ -57,8 +71,11 @@ public class GameManager : MonoBehaviour
         }
 
         playTimer += Time.deltaTime;
+        SetTimeText(playTime - playTimer);
 
     }
+
+    // quit the stages
     public void EndGame(bool result)
     {
         if (!playing)
@@ -66,18 +83,27 @@ public class GameManager : MonoBehaviour
 
         playing = false;
 
-        if (result)
+        if (result) // stage clear and go next stage
         {
             curStageIdx++;
-            if (curStageIdx ==3)
+            if (curStageIdx >= 3)
             {
-                // 게임 끝 클리어
+                SceneManager.LoadScene("GameClear");
                 return;
             }
             PlayerPrefs.SetInt("curStageIdx", curStageIdx);
-            
-            SceneManager.LoadScene("SampleScene");
+
+            FindObjectOfType<FadeCanvas>(true).FadeOut(() =>
+            {
+                SceneManager.LoadScene("SampleScene");
+            });
+                
+
         }
+        else
+        {
+            SceneManager.LoadScene("GameOver");
+        } // result- false
     }
 
 }

@@ -48,25 +48,33 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -6067185528594298527, guid: 8cf299a2ba7286a4d9602d5f0ba959e4, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: ad899c2dc9067d94baaa21a60ca6f468, type: 2}
     - target: {fileID: -4003092854873392710, guid: 8cf299a2ba7286a4d9602d5f0ba959e4, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -4003092854873392710, guid: 8cf299a2ba7286a4d9602d5f0ba959e4, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.3746879
+      value: 0.2966879
       objectReference: {fileID: 0}
     - target: {fileID: -3270834789232462163, guid: 8cf299a2ba7286a4d9602d5f0ba959e4, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.177
+      value: 0.099
       objectReference: {fileID: 0}
+    - target: {fileID: -425565630206218756, guid: 8cf299a2ba7286a4d9602d5f0ba959e4, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 3fe9a7d0d8f2d6a4993ad25b1d19e5f5, type: 2}
     - target: {fileID: 592664080621265513, guid: 8cf299a2ba7286a4d9602d5f0ba959e4, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 592664080621265513, guid: 8cf299a2ba7286a4d9602d5f0ba959e4, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.35894322
+      value: 0.2809432
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 8cf299a2ba7286a4d9602d5f0ba959e4, type: 3}
       propertyPath: m_Name
@@ -82,7 +90,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2029525369266837727, guid: 8cf299a2ba7286a4d9602d5f0ba959e4, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.3746879
+      value: 0.2966879
       objectReference: {fileID: 0}
     - target: {fileID: 2974637336586596102, guid: 8cf299a2ba7286a4d9602d5f0ba959e4, type: 3}
       propertyPath: m_LocalPosition.x
@@ -90,7 +98,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2974637336586596102, guid: 8cf299a2ba7286a4d9602d5f0ba959e4, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.3746879
+      value: 0.2966879
       objectReference: {fileID: 0}
     - target: {fileID: 4518980002003577502, guid: 8cf299a2ba7286a4d9602d5f0ba959e4, type: 3}
       propertyPath: m_LocalPosition.x
@@ -98,7 +106,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4518980002003577502, guid: 8cf299a2ba7286a4d9602d5f0ba959e4, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.36714965
+      value: 0.28914964
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -110,6 +118,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 8cf299a2ba7286a4d9602d5f0ba959e4, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2409471372606752442}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 8cf299a2ba7286a4d9602d5f0ba959e4, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3589359479419570115}
   m_SourcePrefab: {fileID: 100100000, guid: 8cf299a2ba7286a4d9602d5f0ba959e4, type: 3}
 --- !u!1 &4268538234378198709 stripped
 GameObject:
@@ -156,3 +167,24 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!65 &3589359479419570115
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4268538234378198709}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.41543424, y: 0.4039493, z: 0.21608889}
+  m_Center: {x: -0.00942418, y: 0.13901623, z: 0.038216293}
