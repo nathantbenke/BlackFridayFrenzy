@@ -6,7 +6,11 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
+<<<<<<< HEAD
       ticks: 638402701630562359
+=======
+      ticks: 638402636637996879
+>>>>>>> main
     m_Hash: 3762906876
   m_LockFileStatus:
     m_FilePath: "C:/Users/newhh/OneDrive/\uBC14\uD0D5 \uD654\uBA74/GitHub/BlackFridayFrenzy/Black
@@ -15,7 +19,11 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
+<<<<<<< HEAD
       ticks: 638402701630572355
+=======
+      ticks: 638402636638147647
+>>>>>>> main
     m_Hash: 2129133215
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}
