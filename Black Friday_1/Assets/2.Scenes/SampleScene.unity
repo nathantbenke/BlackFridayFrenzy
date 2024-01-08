@@ -673,7 +673,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.474
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -1460,7 +1460,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 0c87642a0e6815d4192566f10d0d28b3, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.1
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -1785,7 +1785,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7cadc9626e16b3a42aa60aeed6a9f4af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeSeconds: 10
+  timeSeconds: 121
   timer: {fileID: 880492852}
   LArmAnimationScript: {fileID: 8247220025372237696}
   LArmHandGrabScript: {fileID: 9155207269986030928}
@@ -2489,7 +2489,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1718174453
 Transform:
   m_ObjectHideFlags: 0
@@ -9347,7 +9347,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4aa4a2d1068b14d458e204fae6d7deb6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefab: {fileID: 6887115091321118817, guid: d59567e6719863f49803e66f2794d299, type: 3}
+  prefab: {fileID: 1749863202184366261, guid: f123b805b87f4744a9ff91124367533a, type: 3}
   minTime: 4
   maxTime: 10
 --- !u!1 &1707138936543003079
