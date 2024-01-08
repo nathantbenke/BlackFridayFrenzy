@@ -84,6 +84,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 9b342de919d7cac4aa6149d1c5d1aaf5, type: 3}
+      propertyPath: m_TagString
+      value: ShoppingItem
+      objectReference: {fileID: 0}
     - target: {fileID: 925231755944626044, guid: 9b342de919d7cac4aa6149d1c5d1aaf5, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 

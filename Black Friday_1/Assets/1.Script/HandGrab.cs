@@ -12,10 +12,12 @@ public class HandGrab : MonoBehaviour
     public int isLeftorRight;
     public bool grabAttempt= false;
     public bool isGrabbing = false;
+    private string identifiedObject;
 
     FixedJoint fj;
     // public CapsuleCollider handCollider;
 
+    public GenerateLevelAndShopList updateShoppingList;
 
     // Start is called before the first frame update
     void Start()
@@ -48,6 +50,17 @@ public class HandGrab : MonoBehaviour
             fj.connectedBody = rb;
             fj.breakForce = 9000;
             isGrabbing = true;
+
+            if (grabbedObj.CompareTag("ShoppingItem"))
+            {
+                identifiedObject = grabbedObj.GetComponent<Item>().itemName;
+                if (identifiedObject != null)
+                {
+                    //updateShoppingList.gameObject.Find();
+                }
+
+            }
+
         } else if (grabbedObj != null && Input.GetKeyUp(KeyCode.G))
         {
             //If it isn
