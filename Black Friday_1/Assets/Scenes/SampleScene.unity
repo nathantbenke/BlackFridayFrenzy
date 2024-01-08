@@ -2359,7 +2359,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1094629455
 RectTransform:
   m_ObjectHideFlags: 0
@@ -8265,8 +8265,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   purchaseList: []
-  itemNames: []
-  count: 10
+  itemNames:
+  - Drone
+  - ComputerMonitor
+  - Coke
+  - Pepsi
+  - TelevisionSet
+  - Handbag
+  - Blender
+  - Headphones
+  - PerfumeV3
+  count: 4
 --- !u!23 &1398532208416535195
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -23011,8 +23020,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   purchaseList: []
-  itemNames: []
-  count: 10
+  itemNames:
+  - Drone
+  - ComputerMonitor
+  - Coke
+  - Pepsi
+  - TelevisionSet
+  - Handbag
+  - Blender
+  - Headphones
+  - PerfumeV3
+  count: 5
 --- !u!1 &5899368885834111732
 GameObject:
   m_ObjectHideFlags: 0
