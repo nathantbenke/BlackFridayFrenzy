@@ -1813,7 +1813,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7cadc9626e16b3a42aa60aeed6a9f4af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeSeconds: 61
+  timeSeconds: 91
   timer: {fileID: 880492852}
   LArmAnimationScript: {fileID: 8247220025372237696}
   LArmHandGrabScript: {fileID: 9155207269986030928}
@@ -3081,13 +3081,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2a754047bd5d8544a6d7eaf9a822974, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  item1: {fileID: 0}
-  item2: {fileID: 0}
-  item3: {fileID: 0}
-  item4: {fileID: 0}
-  item5: {fileID: 0}
-  item6: {fileID: 0}
-  item7: {fileID: 0}
   shoppingSlotPrefab: {fileID: 914889444}
   numOfItems: 0
   purchaseListUI: 

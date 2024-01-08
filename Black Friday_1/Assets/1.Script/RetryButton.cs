@@ -5,15 +5,17 @@ using UnityEngine.SceneManagement;
 
 public class RetryButton : MonoBehaviour
 {
-
-    public GameObject LArmAnimationScript;
-    public GameObject LArmHandGrabScript;
-
     public void OnClickedRePlayBtn()
     {
-        LArmAnimationScript.SetActive(false);
-        LArmHandGrabScript.SetActive(false);
         SceneManager.LoadScene("SampleScene");
 
+    }
+
+    private void Update()
+    {
+        if (Input.GetMouseButtonDown(0))
+        {
+            SceneManager.LoadScene("SampleScene");
+        }
     }
 }
