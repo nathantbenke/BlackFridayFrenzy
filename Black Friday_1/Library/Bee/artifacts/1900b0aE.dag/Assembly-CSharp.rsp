@@ -387,6 +387,7 @@
 "Assets/1.Script/PlayerController/CameraControl.cs"
 "Assets/1.Script/PlayerController/LimColllision.cs"
 "Assets/1.Script/PlayerController/PlayerController.cs"
+"Assets/1.Script/RetryButton.cs"
 "Assets/1.Script/Stage.cs"
 "Assets/1.Script/Stall.cs"
 "Assets/1.Script/Timer.cs"
